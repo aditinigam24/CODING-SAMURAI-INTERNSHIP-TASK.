@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditi Nigam - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#E8B4B8',
+                        secondary: '#D8A7B1',
+                        accent: '#C6B4CE',
+                        dark: '#3D2C3A',
+                        light: '#F5E6E8',
+                        text: '#4A3F41',
+                        textlight: '#F9F1F0'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-reverse': 'float-reverse 5s ease-in-out infinite',
+                        'pulse-slow': 'pulse 5s ease-in-out infinite',
+                        'bounce-slow': 'bounce-slow 3s infinite',
+                        'wave': 'wave 2s linear infinite',
+                        'fade-in': 'fadeIn 1s ease-in',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'rotate': 'rotate 10s linear infinite',
+                        'scale-pulse': 'scalePulse 4s ease-in-out infinite',
+                        'typing': 'typing 3.5s steps(40, end)',
+                        'blink-caret': 'blink-caret 0.75s step-end infinite'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        'float-reverse': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(20px)' }
+                        },
+                        'bounce-slow': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' }
+                        },
+                        'wave': {
+                            '0%': { transform: 'rotate(0deg)' },
+                            '10%': { transform: 'rotate(14deg)' },
+                            '20%': { transform: 'rotate(-8deg)' },
+                            '30%': { transform: 'rotate(14deg)' },
+                            '40%': { transform: 'rotate(-4deg)' },
+                            '50%': { transform: 'rotate(10deg)' },
+                            '60%': { transform: 'rotate(0deg)' },
+                            '100%': { transform: 'rotate(0deg)' }
+                        },
+                        'fadeIn': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        'slideUp': {
+                            '0%': { transform: 'translateY(50px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        'rotate': {
+                            '0%': { transform: 'rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg)' }
+                        },
+                        'scalePulse': {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.05)' }
+                        },
+                        'typing': {
+                            'from': { width: '0' },
+                            'to': { width: '100%' }
+                        },
+                        'blink-caret': {
+                            'from, to': { 'border-color': 'transparent' },
+                            '50%': { 'border-color': 'orange' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background-color: #F9F1F0;
+            color: #4A3F41;
+        }
+        
+        body.dark {
+            background-color: #1E1E1E;
+            color: #F9F1F0;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 24px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #E8B4B8;
+            z-index: 1;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -1px;
+            top: 40px;
+            width: 2px;
+            height: calc(100% - 40px);
+            background-color: #E5E7EB;
+        }
+        
+        .dark .timeline-item::after {
+            background-color: #3D3D3D;
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background-color: #E5E7EB;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .dark .skill-bar {
+            background-color: #3D3D3D;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background-color: #E8B4B8;
+            border-radius: 4px;
+            transition: width 1.5s ease-in-out;
+        }
+        
+        .custom-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #E8B4B8;
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .custom-checkbox:checked {
+            background-color: #E8B4B8;
+        }
+        
+        .custom-checkbox:checked::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 6px;
+            width: 6px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #E8B4B8;
+            box-shadow: 0 0 0 3px rgba(232, 180, 184, 0.2);
+        }
+        
+        .dark input:focus, 
+        .dark textarea:focus {
+            box-shadow: 0 0 0 3px rgba(232, 180, 184, 0.4);
+        }
+        
+        /* Particle background */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(45deg, #E8B4B8, #D8A7B1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* Glowing effect */
+        .glow {
+            box-shadow: 0 0 15px rgba(232, 180, 184, 0.5);
+        }
+        
+        /* Card hover effect */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dark .card-hover:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Section background */
+        .section-bg {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(232, 180, 184, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+            z-index: 0;
+        }
+        
+        .dark .section-bg::before {
+            background: linear-gradient(135deg, rgba(232, 180, 184, 0.05) 0%, rgba(30, 30, 30, 0) 100%);
+        }
+        
+        .section-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Floating elements */
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-reverse {
+            animation: float-reverse 5s ease-in-out infinite;
+        }
+        
+        /* Pulse animation */
+        .pulse-slow {
+            animation: pulse-slow 5s infinite;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        .dark ::-webkit-scrollbar-track {
+            background: #2D2D2D;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #E8B4B8;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D8A7B1;
+        }
+        
+        /* Dark mode toggle */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #E8B4B8;
+        }
+        
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #E8B4B8;
+        }
+        
+        /* Dark mode specific styles */
+        .dark .bg-white {
+            background-color: #2D2D2D !important;
+        }
+        
+        .dark .bg-gray-50 {
+            background-color: #252525 !important;
+        }
+        
+        .dark .bg-gray-900 {
+            background-color: #1A1A1A !important;
+        }
+        
+        .dark .text-gray-700, 
+        .dark .text-gray-600 {
+            color: #D1D1D1 !important;
+        }
+        
+        .dark .text-gray-900 {
+            color: #F9F1F0 !important;
+        }
+        
+        .dark .border-gray-100,
+        .dark .border-gray-200,
+        .dark .border-gray-300 {
+            border-color: #3D3D3D !important;
+        }
+        
+        .dark .bg-gray-200 {
+            background-color: #3D3D3D !important;
+        }
+        
+        /* Typing animation */
+        .typing-animation {
+            overflow: hidden;
+            border-right: .15em solid orange;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: 
+                typing 3.5s steps(40, end),
+                blink-caret .75s step-end infinite;
+        }
+        
+        /* Animated underline */
+        .animated-underline {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .animated-underline::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #E8B4B8;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        
+        .animated-underline:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        /* Floating shapes */
+        .floating-shape {
+            position: absolute;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .shape-1 {
+            top: 10%;
+            left: 5%;
+            width: 100px;
+            height: 100px;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            background: #E8B4B8;
+            animation: float 8s ease-in-out infinite, rotate 20s linear infinite;
+        }
+        
+        .shape-2 {
+            bottom: 15%;
+            right: 10%;
+            width: 150px;
+            height: 150px;
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            background: #D8A7B1;
+            animation: float-reverse 10s ease-in-out infinite, rotate 25s linear infinite reverse;
+        }
+        
+        /* Animated gradient border */
+        .gradient-border {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #E8B4B8, #D8A7B1, #C6B4CE);
+            background-size: 200% 200%;
+            z-index: -1;
+            border-radius: 18px;
+            animation: gradientBG 8s ease infinite;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Wave hand animation */
+        .wave-hand {
+            display: inline-block;
+            animation: wave 2s linear infinite;
+            transform-origin: 70% 70%;
+        }
+        
+        /* Bounce animation for buttons */
+        .bounce-hover:hover {
+            animation: bounce-slow 1s;
+        }
+        
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 50px;
+            border: 2px solid #E8B4B8;
+            border-radius: 15px;
+        }
+        
+        .scroll-indicator::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            width: 6px;
+            height: 6px;
+            margin-left: -3px;
+            background-color: #E8B4B8;
+            border-radius: 100%;
+            animation: scrollDown 2s infinite;
+        }
+        
+        @keyframes scrollDown {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+        
+        /* Animated background pattern */
+        .animated-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(#E8B4B8 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.1;
+            z-index: -1;
+            animation: patternMove 100s linear infinite;
+        }
+        
+        @keyframes patternMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 1000px 1000px; }
+        }
+    </style>
+</head>
+<body class="bg-light relative transition-colors duration-300">
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Floating shapes -->
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    
+    <!-- Animated background pattern -->
+    <div class="animated-pattern"></div>
+    
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 backdrop-blur-sm bg-opacity-80 dark:bg-dark dark:bg-opacity-80 dark:shadow-md transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="text-2xl font-['Pacifico'] text-primary hover:text-secondary transition-colors" data-aos="fade-down">Aditi Nigam</a>
+            
+            <div class="flex items-center gap-6">
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-primary transition-colors relative group dark:text-gray-300" data-aos="fade-down" data-aos-delay="100">
+                        About
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#education" class="text-gray-700 hover:text-primary transition-colors relative group dark:text-gray-300" data-aos="fade-down" data-aos-delay="150">
+                        Education
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#experience" class="text-gray-700 hover:text-primary transition-colors relative group dark:text-gray-300" data-aos="fade-down" data-aos-delay="200">
+                        Experience
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#skills" class="text-gray-700 hover:text-primary transition-colors relative group dark:text-gray-300" data-aos="fade-down" data-aos-delay="250">
+                        Skills
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#projects" class="text-gray-700 hover:text-primary transition-colors relative group dark:text-gray-300" data-aos="fade-down" data-aos-delay="300">
+                        Projects
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                </div>
+                
+                <!-- Dark mode toggle -->
+                <div class="relative inline-block w-12 mr-2 align-middle select-none" data-aos="fade-down" data-aos-delay="350">
+                    <input type="checkbox" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer focus:outline-none" />
+                    <label for="toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                </div>
+                <span class="text-gray-700 dark:text-gray-300 text-sm hidden md:block" data-aos="fade-down" data-aos-delay="350">Mode</span>
+                
+                <a href="#contact" class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 !rounded-button whitespace-nowrap hover:opacity-90 transition-all shadow-md hover:shadow-lg hidden md:block bounce-hover" data-aos="fade-down" data-aos-delay="400">
+                    Contact Me
+                </a>
+                
+                <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors dark:text-gray-300" data-aos="fade-down">
+                    <i class="ri-menu-line ri-lg"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 relative overflow-hidden min-h-screen flex items-center">
+        <div class="absolute inset-0 bg-gradient-to-br from-light to-accent opacity-70 dark:from-dark dark:to-secondary dark:opacity-30"></div>
+        <div class="container mx-auto px-6 hero-content">
+            <div class="flex flex-col md:flex-row items-center w-full">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 dark:text-textlight">Hello, I'm <span class="gradient-text">Aditi Nigam</span> <span class="wave-hand">👋</span></h1>
+                    <p class="text-xl text-gray-700 mb-8 dark:text-gray-300 typing-animation">Computer Science Student & Web Developer</p>
+                    <p class="text-gray-600 mb-8 max-w-lg dark:text-gray-400" data-aos="fade-right" data-aos-delay="200">
+                        Passionate about building efficient systems and solving complex problems through innovative technology solutions.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 !rounded-button whitespace-nowrap hover:opacity-90 transition-all shadow-md hover:shadow-lg bounce-hover" data-aos="zoom-in" data-aos-delay="300">
+                            Get in Touch
+                        </a>
+                        <a href="#projects" class="border-2 border-primary text-primary px-8 py-3 !rounded-button whitespace-nowrap hover:bg-primary hover:text-white transition-all hover:shadow-md dark:text-textlight dark:border-accent dark:hover:bg-accent bounce-hover" data-aos="zoom-in" data-aos-delay="350">
+                            View Projects
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center" data-aos="fade-left" data-aos-delay="300">
+                    <div class="relative floating">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl glow gradient-border">
+                            <img src="aditi1.jpg" 
+                                 alt="Aditi Nigam" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-white rounded-full p-3 shadow-lg pulse-slow dark:bg-dark" data-aos="zoom-in" data-aos-delay="500">
+                            <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white">
+                                <i class="ri-code-s-slash-line ri-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 flex flex-wrap justify-center gap-8" data-aos="fade-up" data-aos-delay="400">
+                <div class="flex items-center gap-3 bg-white bg-opacity-80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm dark:bg-dark dark:bg-opacity-80 card-hover">
+                    <div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary">
+                        <i class="ri-mail-line"></i>
+                    </div>
+                    <span class="text-gray-700 dark:text-gray-300">aditinigam225@gmail.com</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white bg-opacity-80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm dark:bg-dark dark:bg-opacity-80 card-hover">
+                    <div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary">
+                        <i class="ri-phone-line"></i>
+                    </div>
+                    <span class="text-gray-700 dark:text-gray-300">+91 9301381700</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white bg-opacity-80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm dark:bg-dark dark:bg-opacity-80 card-hover">
+                    <div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary">
+                        <i class="ri-map-pin-line"></i>
+                    </div>
+                    <span class="text-gray-700 dark:text-gray-300">Indore, India</span>
+                </div>
+            </div>
+            
+            <!-- Scroll indicator -->
+            <div class="scroll-indicator hidden md:block" data-aos="fade-up" data-aos-delay="600"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white section-bg dark:bg-dark">
+        <div class="container mx-auto px-6 section-content">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-textlight">About Me</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-2/5" data-aos="fade-right">
+                    <div class="relative floating">
+                        <img src="aditi2.jpg"
+                             alt="Aditi working" class="rounded-xl shadow-xl w-full h-auto object-cover object-top gradient-border">
+                        <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white shadow-lg pulse-slow">
+                            <i class="ri-user-line ri-2x"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-3/5" data-aos="fade-left" data-aos-delay="200">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4 dark:text-textlight">Career Objective</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed dark:text-gray-400">
+                        An ambitious and self-driven learner currently pursuing a B.Tech in CSIT, with a strong focus and growing expertise in web development (HTML,CSS,JS). My objective is to secure an entry-level position in a dynamic web development environment where I can immerse myself in deeper learning, contribute my enthusiasm and foundational skills, and gain practical experience. Ultimately, I aspire to leverage this knowledge and my inherent drive for independence to create my own innovative projects and establish a successful career on my own terms, potentially also incorporating my interest in creative writing in future endeavors.
+                    </p>
+                    
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4 dark:text-textlight">Who I Am</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed dark:text-gray-400">
+                        A determined B.Tech CSIT student with a keen interest in technology and a developing skillset in programming. Beyond the code, I possess strong creative writing abilities, which I believe are crucial for clear communication, effective documentation, and crafting compelling narratives around technical concepts. I am eager to leverage this unique combination to contribute meaningfully to projects that require both technical understanding and articulate expression..
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center gap-3 bg-gray-50 p-3 rounded-lg dark:bg-gray-800 card-hover" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary">
+                                <i class="ri-code-box-line ri-lg"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-300">Problem Solver</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-gray-50 p-3 rounded-lg dark:bg-gray-800 card-hover" data-aos="zoom-in" data-aos-delay="150">
+                            <div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary">
+                                <i class="ri-lightbulb-line ri-lg"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-300">Creative Thinker</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-gray-50 p-3 rounded-lg dark:bg-gray-800 card-hover" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary">
+                                <i class="ri-team-line ri-lg"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-300">Team Player</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-gray-50 p-3 rounded-lg dark:bg-gray-800 card-hover" data-aos="zoom-in" data-aos-delay="250">
+                            <div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary">
+                                <i class="ri-book-open-line ri-lg"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-300">Continuous Learner</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <a href="#contact" class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 !rounded-button whitespace-nowrap hover:opacity-90 transition-all shadow-md hover:shadow-lg bounce-hover" data-aos="fade-up" data-aos-delay="300">
+                            Contact Me
+                        </a>
+                        <a href="#" class="border border-gray-300 text-gray-700 px-6 py-3 !rounded-button whitespace-nowrap hover:border-primary hover:text-primary hover:shadow-md transition-all dark:text-textlight dark:border-gray-600 dark:hover:border-accent bounce-hover" data-aos="fade-up" data-aos-delay="350">
+                            Download CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gray-50 section-bg dark:bg-gray-900">
+        <div class="container mx-auto px-6 section-content">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-textlight">Education & Qualifications</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="relative pl-8 pb-12 timeline-item" data-aos="fade-right">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 card-hover dark:bg-gray-800 dark:border-gray-700">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-textlight">B.Tech, Computer Science & Engineering</h3>
+                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">2021 - Present</span>
+                        </div>
+                        <p class="text-gray-700 mb-3 dark:text-gray-400">Symbiosis University Of Applied Sciences</p>
+                        <div class="flex items-center gap-2">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary">
+                                <i class="ri-graduation-cap-line"></i>
+                            </div>
+                            <span class="text-gray-600 dark:text-gray-400">Currently Pursuing</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative pl-8 pb-12 timeline-item" data-aos="fade-right" data-aos-delay="100">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 card-hover dark:bg-gray-800 dark:border-gray-700">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-textlight">Senior Secondary (XII), CBSE</h3>
+                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">2021</span>
+                        </div>
+                        <p class="text-gray-700 mb-3 dark:text-gray-400">Mount Litera Zee School, Ratlam</p>
+                        <div class="flex items-center gap-2">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary">
+                                <i class="ri-book-mark-line"></i>
+                            </div>
+                            <span class="text-gray-600 dark:text-gray-400">Science Stream</span>
+                        </div>
+                        <div class="flex items-center gap-2 mt-2">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary">
+                                <i class="ri-percent-line"></i>
+                            </div>
+                            <span class="text-gray-600 dark:text-gray-400">Percentage: 71.00%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative pl-8 timeline-item" data-aos="fade-right" data-aos-delay="200">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 card-hover dark:bg-gray-800 dark:border-gray-700">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-textlight">Secondary (X), CBSE</h3>
+                            <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">2019</span>
+                        </div>
+                        <p class="text-gray-700 mb-3 dark:text-gray-400">Mount Litera Zee School, Ratlam</p>
+                        <div class="flex items-center gap-2 mt-2">
+                            <div class="w-6 h-6 flex items-center justify-center text-primary">
+                                <i class="ri-percent-line"></i>
+                            </div>
+                            <span class="text-gray-600 dark:text-gray-400">Percentage: 93.00%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white section-bg dark:bg-dark">
+        <div class="container mx-auto px-6 section-content">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-textlight">Currently Holding Positions</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full"></div>
+            </div>
+    
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-gray-50 rounded-xl p-8 shadow-sm border border-gray-100 card-hover dark:bg-gray-800 dark:border-gray-700" data-aos="zoom-in">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary bg-opacity-10 rounded-full flex items-center justify-center text-primary mb-6">
+                        <i class="ri-user-star-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 dark:text-textlight">Academics Head</h3>
+                    <p class="text-gray-600 mb-4 dark:text-gray-400">Student Council at Symbiosis University of Applied Sciences</p>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary">
+                            <i class="ri-calendar-line"></i>
+                        </div>
+                        <span class="text-gray-600 text-sm dark:text-gray-400">August 2023 - Present</span>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-1">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-400">Coordinating academic events and competitions</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-1">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-400">Facilitating communication between students and faculty</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-1">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-400">Organizing workshops and seminars for skill development</span>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="bg-gray-50 rounded-xl p-8 shadow-sm border border-gray-100 card-hover dark:bg-gray-800 dark:border-gray-700" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary bg-opacity-10 rounded-full flex items-center justify-center text-primary mb-6">
+                        <i class="ri-briefcase-4-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 dark:text-textlight">Jr. Marketing Associate</h3>
+                    <p class="text-gray-600 mb-4 dark:text-gray-400">Codec Club at Symbiosis University of Applied Sciences</p>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary">
+                            <i class="ri-calendar-line"></i>
+                        </div>
+                        <span class="text-gray-600 text-sm dark:text-gray-400">January 2024 - Present</span>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-1">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-400">Managing social media presence and content creation</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-1">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-400">Promoting club events and activities across campus</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-1">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-400">Developing marketing strategies for increased engagement</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="text-center mt-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-textlight">Past Positions</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full"></div>
+            </div>
+    
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-8">
+                <div class="bg-gray-50 rounded-xl p-8 shadow-sm border border-gray-100 card-hover dark:bg-gray-800 dark:border-gray-700" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary bg-opacity-10 rounded-full flex items-center justify-center text-primary mb-6">
+                        <i class="ri-computer-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 dark:text-textlight">Student Volunteer</h3>
+                    <p class="text-gray-600 mb-4 dark:text-gray-400">ICT-BIG IEE 2025</p>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary">
+                            <i class="ri-calendar-line"></i>
+                        </div>
+                        <span class="text-gray-600 text-sm dark:text-gray-400">February 2025</span>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-1">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-400">Provided technical assistance during the ICT-BIG IEE event.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-1">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-400">Assisted with setup and troubleshooting of technical equipment.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-1">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-400">Supported participants and speakers with their technical needs.</span>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="bg-gray-50 rounded-xl p-8 shadow-sm border border-gray-100 card-hover dark:bg-gray-800 dark:border-gray-700" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary bg-opacity-10 rounded-full flex items-center justify-center text-primary mb-6">
+                        <i class="ri-shield-user-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 dark:text-textlight">Head Girl</h3>
+                    <p class="text-gray-600 mb-4 dark:text-gray-400">Student Council at Mount Litera Zee School, Ratlam</p>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary">
+                            <i class="ri-calendar-line"></i>
+                        </div>
+                        <span class="text-gray-600 text-sm dark:text-gray-400">Academic Year 2022-2023</span>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-1">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-400">Led the student council and represented the student body.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-1">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-400">Organized school events and initiatives.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-1">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-400">Served as a liaison between students, teachers, and administration.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Certifications Section -->
+    <!-- Skills Section -->
+<section id="skills" class="py-20 bg-white section-bg dark:bg-dark">
+    <div class="container mx-auto px-6 section-content">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-textlight">Technical Skills</h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full"></div>
+        </div>
+        
+        <div class="max-w-3xl mx-auto" data-aos="fade-right">
+            <div class="space-y-6">
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="text-gray-700 font-medium dark:text-gray-300">Web Development</span>
+                        <span class="text-gray-600 dark:text-gray-400">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%" data-aos="slide-right" data-aos-delay="100"></div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="text-gray-700 font-medium dark:text-gray-300">C Programming</span>
+                        <span class="text-gray-600 dark:text-gray-400">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%" data-aos="slide-right" data-aos-delay="200"></div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="text-gray-700 font-medium dark:text-gray-300">MySQL</span>
+                        <span class="text-gray-600 dark:text-gray-400">75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%" data-aos="slide-right" data-aos-delay="300"></div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="text-gray-700 font-medium dark:text-gray-300">MS-Excel</span>
+                        <span class="text-gray-600 dark:text-gray-400">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%" data-aos="slide-right" data-aos-delay="400"></div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="text-gray-700 font-medium dark:text-gray-300">Self-learning</span>
+                        <span class="text-gray-600 dark:text-gray-400">95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%" data-aos="slide-right" data-aos-delay="500"></div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="text-gray-700 font-medium dark:text-gray-300">Effective Communication</span>
+                        <span class="text-gray-600 dark:text-gray-400">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%" data-aos="slide-right" data-aos-delay="600"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Certifications Section -->
+<section id="certifications" class="py-20 bg-gray-50 section-bg dark:bg-gray-900">
+    <div class="container mx-auto px-6 section-content">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-textlight">Certifications</h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <!-- Certificate 1 -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 card-hover dark:bg-gray-800 dark:border-gray-700" data-aos="flip-up">
+                <div class="p-6 h-full flex flex-col">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-primary to-secondary bg-opacity-10 rounded-full text-primary shrink-0">
+                            <i class="ri-briefcase-line ri-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-textlight">Interview and Job Preparation Training</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Internshala Trainings</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary">
+                            <i class="ri-calendar-line"></i>
+                        </div>
+                        <span class="text-gray-600 text-sm dark:text-gray-400">Issued Apr 2025</span>
+                    </div>
+                    <p class="text-gray-700 text-sm mb-4 dark:text-gray-400 flex-grow">
+                        Completed training focused on essential skills for job interviews and the job search process.
+                    </p>
+                    <div class="mt-auto">
+                        <a href="Internship & Job Preparation Training - Certificate of Completion.pdf" target="_blank" class="text-primary text-sm hover:underline flex items-center gap-1">
+                            <i class="ri-file-pdf-line"></i>
+                            View Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certificate 2 -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 card-hover dark:bg-gray-800 dark:border-gray-700" data-aos="flip-up" data-aos-delay="100">
+                <div class="p-6 h-full flex flex-col">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-primary to-secondary bg-opacity-10 rounded-full text-primary shrink-0">
+                            <i class="ri-code-box-line ri-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-textlight">Java Case Study</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Infosys Springboard</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary">
+                            <i class="ri-calendar-line"></i>
+                        </div>
+                        <span class="text-gray-600 text-sm dark:text-gray-400">Issued Apr 2025</span>
+                    </div>
+                    <p class="text-gray-700 text-sm mb-4 dark:text-gray-400 flex-grow">
+                        Successfully completed a Java case study focused on developing a Student Management System.
+                    </p>
+                    <div class="mt-auto">
+                        <a href="1-39da6961-c8e6-4540-b44c-b794d1db10d5.pdf" target="_blank" class="text-primary text-sm hover:underline flex items-center gap-1">
+                            <i class="ri-file-pdf-line"></i>
+                            View Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certificate 3 -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 card-hover dark:bg-gray-800 dark:border-gray-700" data-aos="flip-up" data-aos-delay="150">
+                <div class="p-6 h-full flex flex-col">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-primary to-secondary bg-opacity-10 rounded-full text-primary shrink-0">
+                            <i class="ri-code-s-slash-line ri-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-textlight">Web Development Training</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Internshala Trainings</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary">
+                            <i class="ri-calendar-line"></i>
+                        </div>
+                        <span class="text-gray-600 text-sm dark:text-gray-400">Issued Mar 2025</span>
+                    </div>
+                    <p class="text-gray-700 text-sm mb-4 dark:text-gray-400 flex-grow">
+                        Completed comprehensive training in Web Development, covering HTML, CSS, JavaScript, and more.
+                    </p>
+                    <div class="mt-auto">
+                        <a href="Web Development Training - Certificate of Completion.pdf" target="_blank" class="text-primary text-sm hover:underline flex items-center gap-1">
+                            <i class="ri-file-pdf-line"></i>
+                            View Certificate
+                        </a>
+                        <span class="bg-gray-200 text-gray-700 px-2 py-0.5 rounded-full text-xs mt-2 inline-block dark:bg-gray-700 dark:text-gray-300">Web Development</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certificate 4 -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 card-hover dark:bg-gray-800 dark:border-gray-700" data-aos="flip-up" data-aos-delay="200">
+                <div class="p-6 h-full flex flex-col">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-primary to-secondary bg-opacity-10 rounded-full text-primary shrink-0">
+                            <i class="ri-terminal-box-line ri-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-textlight">Developer Job Simulation</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Accenture</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary">
+                            <i class="ri-calendar-line"></i>
+                        </div>
+                        <span class="text-gray-600 text-sm dark:text-gray-400">Issued Dec 2024</span>
+                    </div>
+                    <p class="text-gray-700 text-sm mb-4 dark:text-gray-400 flex-grow">
+                        Participated in a job simulation focused on roles within the Developer and Technology domains.
+                    </p>
+                    <div class="mt-auto">
+                        <a href="Screenshot 2025-01-19 012938.png" target="_blank" class="text-primary text-sm hover:underline flex items-center gap-1">
+                            <i class="ri-image-line"></i>
+                            View Evidence
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certificate 5 -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 card-hover dark:bg-gray-800 dark:border-gray-700" data-aos="flip-up" data-aos-delay="250">
+                <div class="p-6 h-full flex flex-col">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-primary to-secondary bg-opacity-10 rounded-full text-primary shrink-0">
+                            <i class="ri-money-dollar-circle-line ri-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-textlight">Fast Cash Commando</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Zenora University</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary">
+                            <i class="ri-calendar-line"></i>
+                        </div>
+                        <span class="text-gray-600 text-sm dark:text-gray-400">Issued Nov 2024</span>
+                    </div>
+                    <p class="text-gray-700 text-sm mb-4 dark:text-gray-400 flex-grow">
+                        Completed the "Fast Cash Commando" program at Zenora University.
+                    </p>
+                    <div class="mt-auto">
+                        <a href="7ed8e873-727c-4d34-bd24-a8d3d334a603.pdf" target="_blank" class="text-primary text-sm hover:underline flex items-center gap-1">
+                            <i class="ri-file-pdf-line"></i>
+                            View Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certificate 6 -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 card-hover dark:bg-gray-800 dark:border-gray-700" data-aos="flip-up" data-aos-delay="300">
+                <div class="p-6 h-full flex flex-col">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-primary to-secondary bg-opacity-10 rounded-full text-primary shrink-0">
+                            <i class="ri-bank-line ri-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-textlight">Investment Banking Simulation</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Bank of America</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary">
+                            <i class="ri-calendar-line"></i>
+                        </div>
+                        <span class="text-gray-600 text-sm dark:text-gray-400">Issued Nov 2024</span>
+                    </div>
+                    <p class="text-gray-700 text-sm mb-4 dark:text-gray-400 flex-grow">
+                        Participated in an Investment Banking job simulation offered by Bank of America.
+                    </p>
+                    <div class="mt-auto">
+                        <a href="1731401324175.jpeg" target="_blank" class="text-primary text-sm hover:underline flex items-center gap-1">
+                            <i class="ri-image-line"></i>
+                            View Evidence
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-20 bg-white section-bg dark:bg-dark">
+    <div class="container mx-auto px-6 section-content">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-textlight">Projects</h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm border border-gray-100 card-hover dark:bg-gray-800 dark:border-gray-700" data-aos="zoom-in">
+                <div class="h-56 overflow-hidden">
+                    <img src="symbiedge.jpg" 
+                         alt="LeaderShip Board" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-textlight">LeaderShip Board - SymbiEdge</h3>
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Mar - Apr 2025</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 dark:text-gray-400">Automated scoring and ranking system for 8 university houses across cultural & sports events.</p>
+                    <div class="space-y-2 mb-6">
+                        <div class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-1">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-400">Visual Representations</span>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-1">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-400">Includes PivotTable and Formulas</span>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-1">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-400">Clear visual results</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm dark:bg-gray-700 dark:text-gray-300">Excel</span>
+                        <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm dark:bg-gray-700 dark:text-gray-300">Data Visualization</span>
+                        <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm dark:bg-gray-700 dark:text-gray-300">Automation</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm border border-gray-100 card-hover dark:bg-gray-800 dark:border-gray-700" data-aos="zoom-in" data-aos-delay="150">
+                <div class="h-56 overflow-hidden">
+                    <video src="codec.mp4" 
+                         alt="LeaderShip Club" class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-textlight">LeaderShip Club - Codec Club</h3>
+                        <span class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm">Mar 2025 - Present</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 dark:text-gray-400">The section of website of University Club - Codec Club which involves scoreboard tracking and result visualization.</p>
+                    <div class="space-y-2 mb-6">
+                        <div class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-1">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-400">Scoreboard of all the Bi-weekly quizzes conducted by Codec Club</span>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-1">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-400">Easy to read results</span>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mt-1">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <span class="text-gray-700 dark:text-gray-400">Responsive design for all devices</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm dark:bg-gray-700 dark:text-gray-300">HTML</span>
+                        <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm dark:bg-gray-700 dark:text-gray-300">CSS</span>
+                        <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm dark:bg-gray-700 dark:text-gray-300">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-12 text-center" data-aos="fade-up">
+            <a href="#" class="inline-block bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 !rounded-button whitespace-nowrap hover:opacity-90 transition-all shadow-md hover:shadow-lg bounce-hover">
+                View All Projects
+            </a>
+        </div>
+    </div>
+</section>
+    <!-- Publications Section -->
+    <section id="publications" class="py-20 bg-gray-50 section-bg dark:bg-gray-900">
+        <div class="container mx-auto px-6 section-content">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-textlight">Creative Corner</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="max-w-5xl mx-auto">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden card-hover dark:bg-gray-800 dark:border-gray-700" data-aos="flip-up">
+                    <div class="p-8">
+                        <div class="space-y-8">
+                            <div class="flex flex-col md:flex-row gap-6 pb-8 border-b border-gray-100 dark:border-gray-700">
+                                <div class="md:w-1/4">
+                                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-sm dark:bg-gray-700">
+                                        <img src="https://www.canva.com/design/DAGmOdYx_R0/p9ZzQLtuiGfLfKDnzhqw-w/edit"
+                                             alt="Unshakan:The Story Of resilience" class="w-full h-auto object-cover object-top transition-transform duration-500 hover:scale-105">
+                                    </div>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4 class="text-xl font-semibold text-gray-900 mb-2 dark:text-textlight">Unshaken: The Story of Resilience</h4>
+                                    <div class="flex items-center gap-4 mb-4">
+                                        <div class="flex items-center gap-2">
+                                            <div class="w-5 h-5 flex items-center justify-center text-primary">
+                                                <i class="ri-calendar-line"></i>
+                                            </div>
+                                            <span class="text-gray-600 text-sm dark:text-gray-400">May 2025</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <div class="w-5 h-5 flex items-center justify-center text-primary">
+                                                <i class="ri-book-open-line"></i>
+                                            </div>
+                                            <span class="text-gray-600 text-sm dark:text-gray-400">Short Story</span>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-700 mb-4 dark:text-gray-400">
+                                        <span class="short-text">Aarohi's life was that of chaos and noise—hands raised in anger; voices as weapons; love that created a battleground versus a sanctuary. She learned to be strong, to work hard, and to be the best at everything; because if she was perfect, perhaps she would receive love.
+                                        When people say that the world does not return kindness in the way that we want it to—there was no falsehood in that statement. She had poured so much of herself into the people in her life, and no one truly saw her. And just as she was finally ready to immerse herself in success, life decided to challenge her one last time. The night before her final interview, the past came crashing in—doubt, fear, overwhelm, trauma.
+                                        </span>
+                                        <span class="long-text" style="display: none;">She could have fallen apart. She almost did.
+                                        And then she realized that she would never again be a victim of whatever broke her. She walked into that interview and put everything on the line. She walked into that interview and left everything on the table.
+                                        Many years later, she now sits at the head of the table—as CEO—with admiration and respect, with love. But the truth is, she was always more than enough. Long before there were titles—validation—recognition—she had already won.
+                                        Success isn't about proving the world wrong, it is about knowing your worth when no one else does.
+                                        </span>
+                                    </p>
+                                    <button class="read-more text-primary hover:text-primary-dark transition-colors flex items-center gap-1 animated-underline">
+                                        Read More
+                                        <i class="ri-arrow-right-line"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-col md:flex-row gap-6 pb-8 border-b border-gray-100 dark:border-gray-700">
+                                <div class="md:w-1/4">
+                                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-sm dark:bg-gray-700">
+                                        <img src="https://www.canva.com/design/DAGmBmE9GkU/BzFen0u4B1L2iCo1de8icg/edit"
+                                             alt="Mental Health" class="w-full h-auto object-cover object-top transition-transform duration-500 hover:scale-105">
+                                    </div>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4 class="text-xl font-semibold text-gray-900 mb-2 dark:text-textlight">Mental Health in Digital Age: Challenges and Solutions</h4>
+                                    <div class="flex items-center gap-4 mb-4">
+                                        <div class="flex items-center gap-2">
+                                            <div class="w-5 h-5 flex items-center justify-center text-primary">
+                                                <i class="ri-calendar-line"></i>
+                                            </div>
+                                            <span class="text-gray-600 text-sm dark:text-gray-400">March 2025</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <div class="w-5 h-5 flex items-center justify-center text-primary">
+                                                <i class="ri-article-line"></i>
+                                            </div>
+                                            <span class="text-gray-600 text-sm dark:text-gray-400">Article</span>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-700 mb-4 dark:text-gray-400">
+                                        <span class="short-text">In today's digital world, technology has become an integral part of our lives. From social media platforms to instant messaging, digital tools have completely transformed how we communicate, work, and even unwind. However, with these benefits comes a growing concern: the impact of the digital era on our mental health.
+                                        <br><br>
+                                        <strong>The Hidden Challenges</strong><br>
+                                        1. Culture of comparison: Social media tends to present the highlight reels, rather than the bts. Ongoing exposure can damage self-esteem and feed anxiety.<br>
+                                        2. Burnout digital: Nonstop notifications, screen time, and multitasking leave us eye fatigue and mentally and emotionally drained.<br>
+                                        3. Cyberbullying & toxicity online: The incognito status of the internet gives rise to negativity and harassment, particularly among young people.<br>
+                                        4. Isolation in an interconnected world: Virtual connections can't always substitute actual human interaction and might lead to feelings of loneliness and isolation.
+                                        <br><br>
+                                        <strong>The Way Out</strong><br>
+                                        1. Digital boundaries: Small changes—screen limits, focus time, social media breaks—can make a big difference.<br>
+                                        </span>
+                                        <span class="long-text" style="display: none;">2. Mindful consumption: Follow content that uplifts, educates, and inspires. Unfollow what drains you.<br>
+                                        3. Use tech for good: Teletherapy apps, meditation tools, and support communities are just a few clicks away.<br>
+                                        4. Stand up & support one another: Let's make talking about mental health a norm and be there for one another—online & offline.
+                                        <br><br>
+                                        Are we truly coping with the pace of digital life—or are we silently crumbling under it?
+                                        Your mental health matters more than your screen stats.
+                                        If this relates with you, or you have a story to share, DM me—I'd love to hear your take. Let's keep the dialogue going.
+                                        </span>
+                                    </p>
+                                    <button class="read-more text-primary hover:text-primary-dark transition-colors flex items-center gap-1 animated-underline">
+                                        Read More
+                                        <i class="ri-arrow-right-line"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <div class="md:w-1/4">
+                                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow-sm dark:bg-gray-700">
+                                        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thestatesman.com%2Ffeatures%2Finternational-womens-day-in-historical-perspective-1503160521.html&psig=AOvVaw3vCBZ4PTKsKRDjX_A35gjJ&ust=1746283697857000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLiwlfiDhY0DFQAAAAAdAAAAABAQ"
+                                             alt="Women Leadership" class="w-full h-auto object-cover object-top transition-transform duration-500 hover:scale-105">
+                                    </div>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h4 class="text-xl font-semibold text-gray-900 mb-2 dark:text-textlight">Balancing Roles: The 'Perfect Daughter' and an Emerging Leader</h4>
+                                    <div class="flex items-center gap-4 mb-4">
+                                        <div class="flex items-center gap-2">
+                                            <div class="w-5 h-5 flex items-center justify-center text-primary">
+                                                <i class="ri-calendar-line"></i>
+                                            </div>
+                                            <span class="text-gray-600 text-sm dark:text-gray-400">March 2025</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <div class="w-5 h-5 flex items-center justify-center text-primary">
+                                                <i class="ri-article-line"></i>
+                                            </div>
+                                            <span class="text-gray-600 text-sm dark:text-gray-400">Article</span>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-700 mb-4 dark:text-gray-400">
+                                        <span class="short-text">Coming from a nuclear family, most daughters are trained to be perfect. We are supposed to be ambitious and humble, independent and family-centric, and strong and caring. Juggling all this while moving into leadership positions in our professional lives often feels like walking a tightrope.
+                                        <br><br>
+                                        <strong>The Weight of Expectations—"Perfect Daughter"</strong><br>
+                                        Daughters in most cultures bear the unseen but weighty burden of family expectations. From academic achievement and career success to maintaining tradition and family values, the responsibility to "do it all" is staggering. Though these expectations are usually based on love, they can become restrictive—especially as we see our mothers work through similar roles, putting personal and professional ambitions aside in the process.
+                                        <br><br>
+                                        <strong>Navigating Leadership as a Woman</strong><br>
+                                        Leadership is tough enough without extra scrutiny. Confidence, risk-taking, and decisive action—essential qualities of great leaders—sometimes conflict with the idealized vision of a "perfect daughter." Women leaders are frequently asked pointed questions:<br>
+                                        • Are we too assertive or too soft?<br>
+                                        • Are we putting career ahead of family?<br>
+                                        • Can we really "have it all"?<br>
+                                        The truth? There is no one definition of a perfect daughter—or a perfect leader. Real success is in creating our own criteria and celebrating our uniqueness.
+                                        <br><br>
+                                        <strong>Redefining Perfection</strong><br>
+                                        In order to really succeed, we need to shift our focus on redefining these ideals. Here's how:<br>
+                                        • Be Authentic: Leadership is not about being perfect; it's about authenticity, grit, and motivating others through self-awareness.<br>
+                                        </span>
+                                        <span class="long-text" style="display: none;">• Set Boundaries: It's fine to say no, prioritize well-being, and ask for help when needed.<br>
+                                        • Define Success on Your Terms: No matter where you work or live, success must align with personal fulfilment, not outside expectations.
+                                        <br><br>
+                                        <strong>Paving the Way Forward</strong><br>
+                                        To be a role model is not to be perfect—it's to demonstrate strength, to be resilient, and to be ourselves. When we redefine what it means to be a "perfect daughter" and a leader, we open up space for future generations to walk the path with confidence and authenticity.
+                                        <br><br>
+                                        So, how have you balanced personal and professional expectations in your journey?
+                                        </span>
+                                    </p>
+                                    <button class="read-more text-primary hover:text-primary-dark transition-colors flex items-center gap-1 animated-underline">
+                                        Read More
+                                        <i class="ri-arrow-right-line"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white section-bg dark:bg-dark">
+        <div class="container mx-auto px-6 section-content">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-textlight">Get in Touch</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full"></div>
+                <p class="text-gray-700 mt-6 max-w-2xl mx-auto dark:text-gray-400">Have a question or want to work together? Feel free to contact me using the form below or through my contact information.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <div data-aos="fade-right">
+                    <form action="process_contact.php" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-medium mb-2 dark:text-gray-300">Your Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary transition-all dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300" placeholder="Enter your name" required>
+                        </div>
+                    
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-2 dark:text-gray-300">Your Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary transition-all dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300" placeholder="Enter your email" required>
+                        </div>
+                    
+                        <div>
+                            <label for="subject" class="block text-gray-700 font-medium mb-2 dark:text-gray-300">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary transition-all dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300" placeholder="Enter subject">
+                        </div>
+                    
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-2 dark:text-gray-300">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-primary transition-all dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300" placeholder="Enter your message" required></textarea>
+                        </div>
+                    
+                        <div class="flex items-center gap-2">
+                            <input type="checkbox" id="consent" name="consent" class="custom-checkbox">
+                            <label for="consent" class="text-gray-700 dark:text-gray-400">I agree to the processing of personal data</label>
+                        </div>
+                    
+                        <button type="submit" class="bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 !rounded-button whitespace-nowrap hover:opacity-90 transition-all shadow-md hover:shadow-lg bounce-hover">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <div data-aos="fade-left" data-aos-delay="200">
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-sm border border-gray-100 h-full dark:bg-gray-800 dark:border-gray-700">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-6 dark:text-textlight">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-primary to-secondary bg-opacity-10 rounded-full text-primary shrink-0">
+                                    <i class="ri-mail-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-900 mb-1 dark:text-textlight">Email</h4>
+                                    <p class="text-gray-700 dark:text-gray-400"><a href="mailto:aditinigam225@gmail.com">aditinigam225@gmail.com</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-primary to-secondary bg-opacity-10 rounded-full text-primary shrink-0">
+                                    <i class="ri-phone-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-900 mb-1 dark:text-textlight">Phone</h4>
+                                    <p class="text-gray-700 dark:text-gray-400">+91 9301381700</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-primary to-secondary bg-opacity-10 rounded-full text-primary shrink-0">
+                                    <i class="ri-map-pin-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-900 mb-1 dark:text-textlight">Location</h4>
+                                    <p class="text-gray-700 dark:text-gray-400">Indore, Madhya Pradesh, India</p>
+                                </div>
+                            </div>
+                            
+                            <div class="pt-6 border-t border-gray-200 dark:border-gray-700">
+                                <h4 class="text-lg font-medium text-gray-900 mb-4 dark:text-textlight">Follow Me</h4>
+                                <div class="flex gap-4">
+                                    <a href="https://www.linkedin.com/in/aditi-nigam-001b8431a" class="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-full text-gray-700 hover:bg-primary hover:text-white transition-colors dark:bg-gray-700 dark:text-gray-300" data-aos="zoom-in" data-aos-delay="100">
+                                        <i class="ri-linkedin-fill"></i>
+                                    </a>
+                                    <a href="https://github.com/aditinigam24" class="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-full text-gray-700 hover:bg-primary hover:text-white transition-colors dark:bg-gray-700 dark:text-gray-300" data-aos="zoom-in" data-aos-delay="150">
+                                        <i class="ri-github-fill"></i>
+                                    </a>
+                                    
+                                    <a href="https://www.instagram.com/panda.rose_pvt/" class="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-full text-gray-700 hover:bg-primary hover:text-white transition-colors dark:bg-gray-700 dark:text-gray-300" data-aos="zoom-in" data-aos-delay="250">
+                                        <i class="ri-instagram-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- Footer -->
+        <footer class="py-12 bg-gray-900 text-gray-300">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-6 md:mb-0">
+                        <a href="#" class="text-2xl font-['Pacifico'] text-primary hover:text-secondary transition-colors">Aditi Nigam</a>
+                        <p class="mt-2 text-gray-400">Computer Science Student & Web Developer</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center md:items-end">
+                        <div class="flex gap-6 mb-4">
+                            <a href="#about" class="text-gray-400 hover:text-primary transition-colors">About</a>
+                            <a href="#education" class="text-gray-400 hover:text-primary transition-colors">Education</a>
+                            <a href="#projects" class="text-gray-400 hover:text-primary transition-colors">Projects</a>
+                            <a href="#contact" class="text-gray-400 hover:text-primary transition-colors">Contact</a>
+                        </div>
+                        <p class="text-gray-500 text-sm">© 2025 Aditi Nigam. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
+        <!-- Back to Top Button -->
+        <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-br from-primary to-secondary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:shadow-xl">
+            <i class="ri-arrow-up-line ri-lg"></i>
+        </button>
+    
+        <!-- JavaScript -->
+        <script>
+            // Initialize AOS (Animate On Scroll)
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                offset: 100
+            });
+    
+            // Dark mode toggle
+            const toggle = document.getElementById('toggle');
+            const body = document.body;
+            
+            // Check for saved user preference
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                body.classList.add('dark');
+                toggle.checked = true;
+            }
+            
+            toggle.addEventListener('change', function() {
+                if (this.checked) {
+                    body.classList.add('dark');
+                    localStorage.setItem('darkMode', 'enabled');
+                } else {
+                    body.classList.remove('dark');
+                    localStorage.setItem('darkMode', 'disabled');
+                }
+            });
+           
+  document.addEventListener('DOMContentLoaded', function() {
+    const readMoreButtons = document.querySelectorAll('.read-more');
+
+    readMoreButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const card = this.closest('.flex-col'); // Find the parent card
+        const shortText = card.querySelector('.short-text');
+        const longText = card.querySelector('.long-text');
+
+        if (longText.style.display === 'none') {
+          shortText.style.display = 'none';
+          longText.style.display = 'inline';
+          this.textContent = 'Read Less';
+        } else {
+          shortText.style.display = 'inline';
+          longText.style.display = 'none';
+          this.textContent = 'Read More';
+        }
+      });
+    });
+  });
+
+    
+            // Mobile menu toggle (placeholder - you'll need to implement this)
+            const mobileMenuButton = document.querySelector('.md\\:hidden');
+            mobileMenuButton.addEventListener('click', function() {
+                // Implement mobile menu functionality here
+                console.log('Mobile menu clicked');
+            });
+    
+            // Back to top button
+            const backToTopButton = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+    
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+    
+            // Initialize particles.js
+            particlesJS('particles-js', {
+                particles: {
+                    number: {
+                        value: 80,
+                        density: {
+                            enable: true,
+                            value_area: 800
+                        }
+                    },
+                    color: {
+                        value: "#E8B4B8"
+                    },
+                    shape: {
+                        type: "circle",
+                        stroke: {
+                            width: 0,
+                            color: "#000000"
+                        },
+                        polygon: {
+                            nb_sides: 5
+                        }
+                    },
+                    opacity: {
+                        value: 0.3,
+                        random: false,
+                        anim: {
+                            enable: false,
+                            speed: 1,
+                            opacity_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    size: {
+                        value: 3,
+                        random: true,
+                        anim: {
+                            enable: false,
+                            speed: 40,
+                            size_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: "#E8B4B8",
+                        opacity: 0.2,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 2,
+                        direction: "none",
+                        random: false,
+                        straight: false,
+                        out_mode: "out",
+                        bounce: false,
+                        attract: {
+                            enable: false,
+                            rotateX: 600,
+                            rotateY: 1200
+                        }
+                    }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onhover: {
+                            enable: true,
+                            mode: "grab"
+                        },
+                        onclick: {
+                            enable: true,
+                            mode: "push"
+                        },
+                        resize: true
+                    },
+                    modes: {
+                        grab: {
+                            distance: 140,
+                            line_linked: {
+                                opacity: 1
+                            }
+                        },
+                        bubble: {
+                            distance: 400,
+                            size: 40,
+                            duration: 2,
+                            opacity: 8,
+                            speed: 3
+                        },
+                        repulse: {
+                            distance: 200,
+                            duration: 0.4
+                        },
+                        push: {
+                            particles_nb: 4
+                        },
+                        remove: {
+                            particles_nb: 2
+                        }
+                    }
+                },
+                retina_detect: true
+            });
+    
+            // Animate skill bars when they come into view
+            const skillBars = document.querySelectorAll('.skill-progress');
+            
+            const animateSkillBars = () => {
+                skillBars.forEach(bar => {
+                    const barPosition = bar.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if (barPosition < screenPosition) {
+                        bar.style.width = bar.style.width;
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', animateSkillBars);
+            window.addEventListener('load', animateSkillBars);
+    
+            // Form submission handling (placeholder)
+            const contactForm = document.querySelector('form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // Here you would typically send the form data to a server
+                    alert('Thank you for your message! I will get back to you soon.');
+                    this.reset();
+                });
+            }
+        </script>
+    </body>
+    </html>
